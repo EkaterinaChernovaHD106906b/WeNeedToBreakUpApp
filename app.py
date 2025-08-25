@@ -1,9 +1,13 @@
 import streamlit as st
 from openai import OpenAI
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+# Only load dotenv if it exists (local dev)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 st.title("We Need to Break Up 💔")
