@@ -10,6 +10,11 @@ except ImportError:
     pass
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+# Page config
+
+st.set_page_config(page_title="Breakup Assistant", page_icon="💔", layout="centered")
+
 st.title("We Need to Break Up 💔")
 
 # --- Settings sidebar ---
